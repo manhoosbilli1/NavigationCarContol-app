@@ -67,24 +67,24 @@ public class Instruction extends AppCompatActivity {
                     ArrayList<String> result=i.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     Toast.makeText(Instruction.this,result.get(0), Toast.LENGTH_SHORT).show();
 
-                    if(result.get(0).equals("all on")||(result.get(0).equals("allon"))||(result.get(0).equals("all all"))||(result.get(0).equals("allall"))||(result.get(0).equals("on"))||(result.get(0).equals("alln")))
+                    if(result.get(0).equals("go to class one")||(result.get(0).equals("goto class 1"))||(result.get(0).equals("go to classone"))||(result.get(0).equals("class one"))||(result.get(0).equals("gotoclassone"))||(result.get(0).equals("go 2 class 1")))
                     {
-                        Command.mConnectedThread.write("*all on");
+                        Command.mConnectedThread.write("*go to class one");
                         //Command.mConnectedThread.write("F");
-                        TTS("All devices are now on");
+                        TTS("Going to class one");
 
                     }
-                    else if(result.get(0).equals("all all")||result.get(0).equals("all off")||(result.get(0).equals("call of"))||(result.get(0).equals("alloff"))||(result.get(0).equals("off"))||(result.get(0).equals("allof"))||(result.get(0).equals("all of"))||(result.get(0).equals("of")))
+                    else if(result.get(0).equals("go to class 2")||result.get(0).equals("go to class two")||(result.get(0).equals("goto class2"))||(result.get(0).equals("goto classtwo"))||(result.get(0).equals("class 2"))||(result.get(0).equals("class two"))||(result.get(0).equals("go to class classtwo"))||(result.get(0).equals("class2")))
                     {
-                        Command.mConnectedThread.write("*all off");
-                        TTS("All devices are now off");
+                        Command.mConnectedThread.write("*go to class two");
+                        TTS("going to class two");
                         //ommand.mConnectedThread.write("S");
 
                     }
-                    else if((result.get(0).equals("LED on"))||(result.get(0).equals("ledon"))||(result.get(0).equals("LED on"))||(result.get(0).equals("LED On")))
+                    else if((result.get(0).equals("stop"))||(result.get(0).equals("stup")))
                     {
-                        Command.mConnectedThread.write("*led on");
-                        TTS("The LED is now on");
+                        Command.mConnectedThread.write("*stop");
+                        TTS("robot is now stopping");
                         //Toast.makeText(Instruction.this,"All Off ho jaye to please scream and support the developer",Toast.LENGTH_SHORT).show();
                     }
                     else if((result.get(0).equals("led off"))||(result.get(0).equals("ledoff"))||(result.get(0).equals("LED off"))||(result.get(0).equals("LED Off")))

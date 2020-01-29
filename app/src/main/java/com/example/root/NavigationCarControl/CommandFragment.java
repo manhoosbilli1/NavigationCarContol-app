@@ -55,16 +55,16 @@ public class CommandFragment extends Fragment {
     public void writedata(View view)
     {
 
-        Intent intn=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        intn.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intn.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intn.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
-        intn.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true);
-        intn.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS,new Long(1000));
-        intn.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1000);
-        intn.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 1200);
-        intn.putExtra(RecognizerIntent.EXTRA_PROMPT,"Say Something");
-        try {
+            Intent intn=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+            intn.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+            intn.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+            intn.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
+            intn.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true);
+            intn.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS,new Long(1000));
+            intn.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1000);
+            intn.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 1200);
+            intn.putExtra(RecognizerIntent.EXTRA_PROMPT,"Say Something");
+            try {
             startActivityForResult(intn, 100);
         }
         catch(Exception e)
